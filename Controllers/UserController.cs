@@ -82,6 +82,7 @@ public IActionResult Login(LoginModel model)
         if (_dbConnection.State == ConnectionState.Open)
         {
             _dbConnection.Close();
+             Console.WriteLine("Connection to database closed successfully.");
         }
     }
 }
