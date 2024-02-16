@@ -13,7 +13,7 @@ namespace Sepalo.WebApi.Admin.Repository
     public class BaseRepository : IDisposable
     {
         //Data base connection
-        public IDbConnection _dbConnection;
+       public IDbConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
         //Data base connection type
         protected DBConnectionType _dbConnectionType;
         /// <summary>

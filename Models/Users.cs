@@ -36,6 +36,7 @@
 
         public Users()
         {
+            }
         }
 
         public int Id { get => id; set => id = value; }

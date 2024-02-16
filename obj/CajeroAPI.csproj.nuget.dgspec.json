@@ -14,12 +14,14 @@
         "outputPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,17 +74,9 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.21.121, )"
-            },
             "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
               "version": "[3.21.130, )"
-            },
-            "Oracle.ManagedDataAccess.EntityFramework": {
-              "target": "Package",
-              "version": "[21.4.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

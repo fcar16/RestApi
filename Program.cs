@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Sepalo.WebApi.Admin.Repository;
+﻿using System.Collections;
+using CajeroAPI.Models;
+using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +38,28 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+// Open database connection
+
+ OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
+try
+{
+    _dbConnection.Open();
+    Console.WriteLine("Connection to database established successfully.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error connecting to database: {ex.Message}");
+}
+ finally
+    {
+        if (_dbConnection.State == ConnectionState.Open)
+        {
+            _dbConnection.Close();
+            Console.WriteLine("Connection to database closed successfully.");
+        }
+    }
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

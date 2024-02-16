@@ -304,8 +304,6 @@ C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\ADO.Net.Clien
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\ADO.Net.Client.Implementation.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Azure.Identity.dll
-C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\EntityFramework.SqlServer.dll
-C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\EntityFramework.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Humanizer.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
@@ -371,9 +369,7 @@ C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\NuGet.Packagi
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\NuGet.Versioning.dll
-C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Oracle.EntityFrameworkCore.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Oracle.ManagedDataAccess.dll
-C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Oracle.ManagedDataAccess.EntityFramework.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\franc\OneDrive\Escritorio\Angula\RESTAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
