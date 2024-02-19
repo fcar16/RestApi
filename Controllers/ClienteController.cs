@@ -8,40 +8,30 @@ using Oracle.ManagedDataAccess.Client;
 using System;
 using CajeroAPI.Controllers;
 using System.Data.Common;
-
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Security.Claims; 
 
 namespace CajeroAPI.Controllers
 {
     [ApiController]
     [Microsoft.AspNetCore.Mvc.Route("[controller]")]
-    public class ClienteController
+    public class ClienteController : ControllerBase
     {
-    
         [HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("Get Reports")]
-        public dynamic getReports(DbConnection _dbConnection)
+        public dynamic getReports()
         {
+            string username = User.FindFirst(ClaimTypes.Name)?.Value;
+            LoginModel loginModel = new LoginModel();
+            String query1 = "SELECT PROFILE_ID FROM USERS WHERE USERNAME = '"+ username + "'"; // Modified query to include single quotes
+            Console.WriteLine(username);
+            ReportDAO reportDAO = new ReportDAO();
             
-                try
-                {
-                _dbConnection.Open();
-                    Console.WriteLine("Connection to database established successfully.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error connecting to database: {ex.Message}");
-                }
-                finally
-                {
-                    _dbConnection.Close();
-                }
-            
+            int id = reportDAO.GetProfileId(query1);
+            String query = "SELECT * FROM REPORT WHERE ID IN (SELECT REPORT_ID FROM PROFILE_RERPOT WHERE PROFILE_ID =  " +  id + ")";
+            dynamic report = new ReportDAO().GetReportsddbb(query);
 
-            Report report = new Report(1,"reportes","MultaDeTrafico","niIdea","ldkslkds");
-            Report_Criteria reportCriteria = new Report_Criteria(1, "pago", "operador", "Description", "sql", "ssss", 1, 2);
-            Console.WriteLine("Conexión exitosa a Oracle.");
             return report;
         }
-
     }
 }

@@ -37,7 +37,7 @@
         public Users()
         {
             }
-        }
+        
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
@@ -54,4 +54,5 @@
         public int User_Type1 { get => User_Type; set => User_Type = value; }
         public int Profile_Id1 { get => Profile_Id; set => Profile_Id = value; }
     }
-}
+    }
+

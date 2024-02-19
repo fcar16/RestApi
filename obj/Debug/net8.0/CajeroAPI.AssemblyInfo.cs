@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CajeroAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c453a85d8980235eb280f51598e4d8bbf22e99b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+695cc63d186d44ca53efbaf1c2dbd5a1bbca6e66")]
 [assembly: System.Reflection.AssemblyProductAttribute("CajeroAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CajeroAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

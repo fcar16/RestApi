@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2wUxhStKzJmD3VTr7TzAnaFvUIeitX4GVA8HOzNqGAk=",
+  "Hash": "rLYW83+Y3b62BLDbFqrW4dRly29KBWBUhdRAHWtSIao=",
   "Source": "CajeroAPI",
   "BasePath": "_content/CajeroAPI",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css",
+      "Identity": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css",
       "SourceId": "CajeroAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CajeroAPI",
       "RelativePath": "CajeroAPI.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css"
+      "OriginalItemSpec": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css"
     }
   ]
 }

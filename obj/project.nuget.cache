@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F0nfud2Y6yaIkQMA3hwhrNEMF/HEScIfYTv2L8k43dnHvhmcCaQTSx3MLjOuLY4tp9RvyCFxmzYN43Ie821M9g==",
+  "dgSpecHash": "GWEU8tWTCJTD7GCXWMX3VUHw7nfu8bQ+BJH55tuaigQ7X8OKBkvUNvC49zWkbqjpDU86jNJCsk08mIAV7nVziw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\CajeroAPI.csproj",
+  "projectFilePath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\CajeroAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\franc\\.nuget\\packages\\ado.net.client\\1.4.4\\ado.net.client.1.4.4.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\ado.net.client.annotations\\1.2.0\\ado.net.client.annotations.1.2.0.nupkg.sha512",

@@ -34,14 +34,17 @@ public IActionResult Login(LoginModel model)
         Console.WriteLine("Connection to database established successfully.");
 
         using var command = _dbConnection.CreateCommand();
-        command.CommandText = "SELECT * FROM Users WHERE username = :username AND Password = :password";
+        command.CommandText = "SELECT username, Password, profile_id  FROM Users WHERE username = :username AND Password = :password";
         command.Parameters.Add(new OracleParameter("username", model.username));
         command.Parameters.Add(new OracleParameter("password", model.Password));
+       
 
         using var reader = command.ExecuteReader();
         if (reader.Read())
         {
             // Usuario encontrado
+            model.username = reader.GetString(0);
+            model.Profile_Id = reader.GetInt32(2);
             var tokenOptions = _configuration.GetSection("TokenOptions").Get<TokenOptions>();
             var key = Encoding.ASCII.GetBytes(tokenOptions.SecretKey);
             // Verificar que ExpirationMinutes es un valor positivo

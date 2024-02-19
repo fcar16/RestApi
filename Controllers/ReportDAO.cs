@@ -47,6 +47,37 @@ namespace CajeroAPI.Controllers
             }
             return ArrayReports;
         }
+        
+        public int GetProfileId(string query)
+        {
+            OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
+            int profile_id = 1;
+            try
+            {
+                _dbConnection.Open();
 
+                OracleCommand command = _dbConnection.CreateCommand();
+                command.CommandText = query;
+
+                OracleDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    profile_id = Convert.ToInt32(reader["PROFILE_ID"]);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Buenas Tardes" + ex.Message);
+            }
+            finally
+            {
+                _dbConnection.Close();
+                
+            }
+            return profile_id;
+        }
     }
 }
