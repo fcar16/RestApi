@@ -70,7 +70,7 @@ namespace CajeroAPI.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Buenas Tardes" + ex.Message);
+                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
             }
             finally
             {

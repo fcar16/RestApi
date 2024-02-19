@@ -2,8 +2,8 @@
 {
     public class Users {
         private int id;
-        private string name;
-        private string password;
+        public string name;
+        public string password;
         private string email;
         private string realname;
         private int Surname;
@@ -37,6 +37,12 @@
         public Users()
         {
             }
+            
+        public Users(string name, string password)
+        {
+            this.Name = name;
+            this.Password = password;
+        }
         
 
         public int Id { get => id; set => id = value; }
