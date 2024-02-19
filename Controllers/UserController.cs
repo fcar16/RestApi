@@ -11,10 +11,15 @@ using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using System.Data.Common;
 
+
+
+
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
+
 {
+   
      private readonly BaseRepository _baseRepository;
     private readonly IConfiguration _configuration;
 
@@ -22,6 +27,7 @@ public class UserController : ControllerBase
     {
         _baseRepository = baseRepository;
         _configuration = configuration;
+       
     }
 
 [HttpPost("login")]
@@ -43,8 +49,9 @@ public IActionResult Login(LoginModel model)
         if (reader.Read())
         {
             // Usuario encontrado
-            model.username = reader.GetString(0);
-            model.Profile_Id = reader.GetInt32(2);
+
+          
+
             var tokenOptions = _configuration.GetSection("TokenOptions").Get<TokenOptions>();
             var key = Encoding.ASCII.GetBytes(tokenOptions.SecretKey);
             // Verificar que ExpirationMinutes es un valor positivo

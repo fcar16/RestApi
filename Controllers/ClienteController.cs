@@ -11,6 +11,8 @@ using System.Data.Common;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using System.Security.Claims; 
 
+
+
 namespace CajeroAPI.Controllers
 {
     [ApiController]
@@ -19,16 +21,13 @@ namespace CajeroAPI.Controllers
     {
         [HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("Get Reports")]
-        public dynamic getReports()
+        public dynamic getReports(String name)
         {
-            string username = User.FindFirst(ClaimTypes.Name)?.Value;
-            LoginModel loginModel = new LoginModel();
-            String query1 = "SELECT PROFILE_ID FROM USERS WHERE USERNAME = '"+ username + "'"; // Modified query to include single quotes
-            Console.WriteLine(username);
+           
             ReportDAO reportDAO = new ReportDAO();
-            
-            int id = reportDAO.GetProfileId(query1);
-            String query = "SELECT * FROM REPORT WHERE ID IN (SELECT REPORT_ID FROM PROFILE_RERPOT WHERE PROFILE_ID =  " +  id + ")";
+           int id = reportDAO.GetProfileId("SELECT PROFILE_ID FROM USERS WHERE USERNAME = '" + name + "'");
+           Console.WriteLine("ID: " + id);
+            String query = "SELECT * FROM REPORT WHERE ID IN (SELECT REPORT_ID FROM PROFILE_RERPOT WHERE PROFILE_ID =  " + id + ")";
             dynamic report = new ReportDAO().GetReportsddbb(query);
 
             return report;

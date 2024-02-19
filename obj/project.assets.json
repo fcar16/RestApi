@@ -8613,11 +8613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\CajeroAPI.csproj",
+      "projectUniqueName": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\CajeroAPI.csproj",
       "projectName": "CajeroAPI",
-      "projectPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\CajeroAPI.csproj",
+      "projectPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\CajeroAPI.csproj",
       "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RESTAPI\\obj\\",
+      "outputPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
