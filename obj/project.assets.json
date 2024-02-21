@@ -8608,19 +8608,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\franc\\.nuget\\packages\\": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\CajeroAPI.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\OneDrive\\Escritorio\\RestApi\\CajeroApi\\CajeroAPI.csproj",
       "projectName": "CajeroAPI",
-      "projectPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\CajeroAPI.csproj",
-      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\",
+      "projectPath": "C:\\Users\\javie\\OneDrive\\Escritorio\\RestApi\\CajeroApi\\CajeroAPI.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\OneDrive\\Escritorio\\RestApi\\CajeroApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

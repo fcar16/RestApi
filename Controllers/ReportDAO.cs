@@ -79,5 +79,52 @@ namespace CajeroAPI.Controllers
             }
             return profile_id;
         }
+        public ArrayList GetReportCritddbb(String query)
+        {
+            OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
+            ArrayList ArrayReportCrit = new ArrayList();
+            try
+            {
+                _dbConnection.Open();
+
+                OracleCommand command = _dbConnection.CreateCommand();
+                command.CommandText = query;
+
+                OracleDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["ID"]);
+                    string description = reader["DESCRIPTION"].ToString();
+                    string name_report = reader["NAME_REPORT"].ToString();
+                    string url_template = reader["URL_TEMPLATE"].ToString();
+                    string sql_criteria = reader["SQL_CRITERIA"].ToString();
+                    int Idc = Convert.ToInt32(reader["ID"]);
+                    string type = reader["TYPE"].ToString();
+                    string @operator = reader["OPERATOR"].ToString();
+                    string sql = reader["SQL"].ToString();
+                    string sQL_SOURCE = reader["SQL_SOURCE"].ToString();
+                    int order = Convert.ToInt32(reader["ORDER"]);
+
+                    Report report = new Report(id, description, name_report, url_template, sql_criteria);
+                    Report_Criteria reportC = new Report_Criteria(Idc, type, @operator, description, sql, sQL_SOURCE, id, order);
+                    ArrayReportCrit.Add(report);
+                    ArrayReportCrit.Add(reportC);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
+            }
+            finally
+            {
+                _dbConnection.Close();
+
+            }
+            return ArrayReportCrit;
+
+        }
     }
 }
