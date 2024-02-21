@@ -95,20 +95,17 @@ namespace CajeroAPI.Controllers
                 while (reader.Read())
                 {
                     int id = Convert.ToInt32(reader["ID"]);
-                    string description = reader["DESCRIPTION"].ToString();
-                    string name_report = reader["NAME_REPORT"].ToString();
-                    string url_template = reader["URL_TEMPLATE"].ToString();
-                    string sql_criteria = reader["SQL_CRITERIA"].ToString();
-                    int Idc = Convert.ToInt32(reader["ID"]);
                     string type = reader["TYPE"].ToString();
                     string @operator = reader["OPERATOR"].ToString();
-                    string sql = reader["SQL"].ToString();
+                    string description = reader["DESCRIPTION"].ToString();
+                    string sql = reader["SQL"].ToString(); 
                     string sQL_SOURCE = reader["SQL_SOURCE"].ToString();
-                    int order = Convert.ToInt32(reader["ORDER"]);
+                    int Idc = Convert.ToInt32(reader["ID_REPORT"]);
+                    int order = Convert.ToInt32(reader["ORDER_NUMBER"]);
 
-                    Report report = new Report(id, description, name_report, url_template, sql_criteria);
+
                     Report_Criteria reportC = new Report_Criteria(Idc, type, @operator, description, sql, sQL_SOURCE, id, order);
-                    ArrayReportCrit.Add(report);
+
                     ArrayReportCrit.Add(reportC);
                 }
 

@@ -37,9 +37,9 @@ namespace CajeroAPI.Controllers
         [Microsoft.AspNetCore.Mvc.Route("Get ReportCrit")]
         public dynamic getReportsCrit()
         {
-            int id = 1;
-            String query = "SELECT * FROM REPORT R JOIN REPORT_CRITERIA RC ON R.REPORT_ID = RC.REPORT_ID WHERE R.REPORT_ID =" + id + ";";
-            dynamic report = new ReportDAO().GetReportCritddbb(query);
+            int id = 1 ;
+            String query1 = "SELECT * FROM REPORT R JOIN REPORT_CRITERIA RC ON R.ID = RC.ID_REPORT WHERE R.ID =" + id ;
+            dynamic report = new ReportDAO().GetReportCritddbb(query1);
 
             return report;
         }
