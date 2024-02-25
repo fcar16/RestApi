@@ -79,6 +79,7 @@ namespace CajeroAPI.Controllers
             }
             return profile_id;
         }
+        
         public ArrayList GetReportCritddbb(String query)
         {
             OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
