@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rLYW83+Y3b62BLDbFqrW4dRly29KBWBUhdRAHWtSIao=",
+  "Hash": "T7X6gslubgS3zhKKv8zouSAZSU7xf/BrbvPYJkRW4Q0=",
   "Source": "CajeroAPI",
   "BasePath": "_content/CajeroAPI",
   "Mode": "Default",
@@ -9,10 +9,10 @@
   "DiscoveryPatterns": [],
   "Assets": [
     {
-      "Identity": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "Identity": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
       "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
       "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
       "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
       "AssetKind": "All",
@@ -25,13 +25,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js",
+      "Identity": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js",
       "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
       "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
       "RelativePath": "QuickGrid.razor.js",
       "AssetKind": "All",
@@ -44,13 +44,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\franc\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js"
+      "OriginalItemSpec": "C:\\Users\\javie\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css",
+      "Identity": "C:\\Users\\javie\\OneDrive\\Escritorio\\CajeroApi\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css",
       "SourceId": "CajeroAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\javie\\OneDrive\\Escritorio\\CajeroApi\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CajeroAPI",
       "RelativePath": "CajeroAPI.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css"
+      "OriginalItemSpec": "C:\\Users\\javie\\OneDrive\\Escritorio\\CajeroApi\\RestApi\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CajeroAPI.styles.css"
     }
   ]
 }

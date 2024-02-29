@@ -29,7 +29,8 @@ namespace CajeroAPI.Controllers
            Console.WriteLine("ID: " + id);
             String query = "SELECT * FROM REPORT WHERE ID IN (SELECT REPORT_ID FROM PROFILE_RERPOT WHERE PROFILE_ID =  " + id + ")";
             dynamic report = new ReportDAO().GetReportsddbb(query);
-
+            EmailController email = new EmailController();
+            email.SendEmail();
             return report;
         }
 
