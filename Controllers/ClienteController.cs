@@ -3,12 +3,12 @@ using System.Reflection.Metadata.Ecma335;
 using CajeroAPI.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using Oracle.ManagedDataAccess.Client;
+
+
 using System;
 using CajeroAPI.Controllers;
 using System.Data.Common;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 using System.Security.Claims; 
 
 
@@ -29,8 +29,7 @@ namespace CajeroAPI.Controllers
            Console.WriteLine("ID: " + id);
             String query = "SELECT * FROM REPORT WHERE ID IN (SELECT REPORT_ID FROM PROFILE_RERPOT WHERE PROFILE_ID =  " + id + ")";
             dynamic report = new ReportDAO().GetReportsddbb(query);
-            EmailController email = new EmailController();
-            email.SendEmail();
+           
             return report;
         }
 
