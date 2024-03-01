@@ -2,10 +2,13 @@
 using System;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.AspNetCore.Mvc;
 
-public class EmailController
+public class EmailController : ControllerBase
 {
-    public void SendEmail()
+    [HttpPost]
+    [Microsoft.AspNetCore.Mvc.Route("SendEmail")]
+    public OkResult SendEmail ()
     {
         // Configurar los detalles del servidor SMTP
         string smtpServer = "smtp.gmail.com";
@@ -45,5 +48,6 @@ public class EmailController
             mensaje.Dispose();
             clienteSmtp.Dispose();
         }
+         return Ok();
     }
 }
