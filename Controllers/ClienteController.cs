@@ -43,16 +43,34 @@ namespace CajeroAPI.Controllers
 
             return report;
         }
-        [HttpGet()]
-[Microsoft.AspNetCore.Mvc.Route("Get Report/{id}")]
-public dynamic getReport(int id)
-{
-    ReportDAO reportDAO = new ReportDAO();
-    String query = "SELECT * FROM REPORT WHERE ID = " + id;
-    dynamic report = reportDAO.GetReportsddbb(query);
 
-    return report;
-}
+
+        [HttpGet()]
+        [Microsoft.AspNetCore.Mvc.Route("Get Report/{id}")]
+        public dynamic getReport(int id)
+        {
+            ReportDAO reportDAO = new ReportDAO();
+            String query = "SELECT * FROM REPORT WHERE ID = " + id;
+            dynamic report = reportDAO.GetReportsddbb(query);
+
+            return report;
+        }
+
+        [HttpPost()]
+        [Microsoft.AspNetCore.Mvc.Route("repot/detail/{id}")]
+        public dynamic calculateResultReport(int id)
+        {
+            ReportDAO reportDAO = new ReportDAO();
+            String query = "SELECT * FROM REPORT WHERE ID = " + id;
+            dynamic report = reportDAO.GetReportsddbb(query);
+
+            String sqlToRun = report[0].SQL_CRITERIA1;
+            dynamic result = reportDAO.GetReportResult(sqlToRun);
+            return result;
+        }
+
+
+
     }
 
     

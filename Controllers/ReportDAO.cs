@@ -1,5 +1,9 @@
 using System.Collections;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using CajeroAPI.Models;
+using Mono.TextTemplating;
+using Newtonsoft.Json.Linq;
 using Oracle.ManagedDataAccess.Client;
 
 namespace CajeroAPI.Controllers
@@ -10,7 +14,7 @@ namespace CajeroAPI.Controllers
 
         public ArrayList GetReportsddbb(string query)
         {
-            OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
+            OracleConnection _dbConnection = new OracleConnection("Data source=sepvm08.sepalo.es:1521/xe; Password=PWDCOROLA; Persist Security Info=True; User ID=COROLA");
             ArrayList ArrayReports = new ArrayList();
             try
             {
@@ -123,6 +127,42 @@ namespace CajeroAPI.Controllers
             }
             return ArrayReportCrit;
 
+        }
+
+        public Object GetReportResult(string query)
+        {
+            OracleConnection _dbConnection = new OracleConnection("Data source=sepvm08.sepalo.es:1521/xe; Password=PWDCOROLA; Persist Security Info=True; User ID=COROLA");
+            String ArrayReports = "[";
+            try
+            {
+                _dbConnection.Open();
+
+                OracleCommand command = _dbConnection.CreateCommand();
+                command.CommandText = query;
+
+                OracleDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string JSON_VALUE = reader["JSON_VALUE"].ToString();
+                    // Populate the report object with data from the reader
+                    //ArrayReports.Add(JObject.Parse(JSON_VALUE));
+                    ArrayReports+= JSON_VALUE + ",";
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
+            }
+            finally
+            {
+                _dbConnection.Close();
+
+            }
+            ArrayReports += "]";
+            return ArrayReports;
         }
     }
 }
