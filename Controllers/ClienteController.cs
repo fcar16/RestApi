@@ -9,7 +9,8 @@ using System;
 using CajeroAPI.Controllers;
 using System.Data.Common;
 
-using System.Security.Claims; 
+using System.Security.Claims;
+using System.Runtime.InteropServices;
 
 
 
@@ -65,6 +66,7 @@ namespace CajeroAPI.Controllers
             dynamic report = reportDAO.GetReportsddbb(query);
 
             String sqlToRun = report[0].SQL_CRITERIA1;
+            Console.WriteLine("SQL TO RUN: " + sqlToRun);
             dynamic result = reportDAO.GetReportResult(sqlToRun);
             return result;
         }

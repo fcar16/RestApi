@@ -151,7 +151,7 @@ public IActionResult Register(LoginModel model)
 
         command.ExecuteNonQuery();
 
-        return Ok("User registered successfully");
+       return Ok(new { message = "User registered successfully" });
     }
     catch (Exception ex)
     {
