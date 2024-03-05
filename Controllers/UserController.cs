@@ -10,6 +10,8 @@ using System.Text;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using System.Data.Common;
+using System.Security.Cryptography;
+using System;
 
 
 
@@ -33,6 +35,19 @@ public class UserController : ControllerBase
 [HttpPost("login")]
 public IActionResult Login(LoginModel model)
 {
+    // Obtén el hash de la contraseña proporcionada por el usuario
+    string providedPasswordHash;
+    using (SHA256 sha256Hash = SHA256.Create())
+    {
+        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(model.Password));
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < bytes.Length; i++)
+        {
+            builder.Append(bytes[i].ToString("x2"));
+        }
+        providedPasswordHash = builder.ToString();
+    }
+
     OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
     try
     {
@@ -42,7 +57,7 @@ public IActionResult Login(LoginModel model)
         using var command = _dbConnection.CreateCommand();
         command.CommandText = "SELECT username, Password, profile_id  FROM Users WHERE username = :username AND Password = :password";
         command.Parameters.Add(new OracleParameter("username", model.username));
-        command.Parameters.Add(new OracleParameter("password", model.Password));
+        command.Parameters.Add(new OracleParameter("password", providedPasswordHash));
        
 
         using var reader = command.ExecuteReader();
@@ -93,6 +108,62 @@ public IActionResult Login(LoginModel model)
         {
             _dbConnection.Close();
              Console.WriteLine("Connection to database closed successfully.");
+        }
+    }
+}
+
+[HttpPost("register")]
+public IActionResult Register(LoginModel model)
+{
+
+  
+    if (string.IsNullOrEmpty(model.username) || string.IsNullOrEmpty(model.Password) || model.Profile_Id == 0)
+    {
+        return BadRequest("Por favor, rellene todos los campos.");
+    }
+    using (SHA256 sha256Hash = SHA256.Create())
+{
+    // Convertir la entrada en un array de bytes y calcular el hash
+    byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(model.Password));
+
+    // Convertir el array de bytes en una cadena hexadecimal
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < bytes.Length; i++)
+    {
+        builder.Append(bytes[i].ToString("x2"));
+    }
+    model.Password = builder.ToString();
+    Console.WriteLine("Password: " + model.Password);
+}
+
+    
+    OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
+    try
+    {
+        _dbConnection.Open();
+        Console.WriteLine("Connection to database established successfully.");
+
+        using var command = _dbConnection.CreateCommand();
+        command.CommandText = "INSERT INTO Users (username, Password, profile_id) VALUES (:username, :password, :profile_id)";
+        command.Parameters.Add(new OracleParameter("username", model.username));
+        command.Parameters.Add(new OracleParameter("password", model.Password));
+        command.Parameters.Add(new OracleParameter("profile_id", model.Profile_Id));
+
+        command.ExecuteNonQuery();
+
+        return Ok("User registered successfully");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error connecting to database: {ex.Message}");
+        return StatusCode(500, "Error opening database connection");
+    }
+    finally
+    {
+        if (_dbConnection.State == ConnectionState.Open)
+        {
+            _dbConnection.Close();
+            Console.WriteLine("Connection to database closed successfully.");
         }
     }
 }
