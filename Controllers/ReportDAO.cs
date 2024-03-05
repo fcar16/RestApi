@@ -14,7 +14,7 @@ namespace CajeroAPI.Controllers
 
         public ArrayList GetReportsddbb(string query)
         {
-            OracleConnection _dbConnection = new OracleConnection("Data source=sepvm08.sepalo.es:1521/xe; Password=PWDCOROLA; Persist Security Info=True; User ID=COROLA");
+            OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
             ArrayList ArrayReports = new ArrayList();
             try
             {
@@ -131,7 +131,7 @@ namespace CajeroAPI.Controllers
 
         public Object GetReportResult(string query)
         {
-            OracleConnection _dbConnection = new OracleConnection("Data source=sepvm08.sepalo.es:1521/xe; Password=PWDCOROLA; Persist Security Info=True; User ID=COROLA");
+            OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
             String ArrayReports = "[";
             try
             {
