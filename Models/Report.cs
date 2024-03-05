@@ -6,7 +6,7 @@
         private String NAME_REPORT;
         private String DESCRIPTION;
         private String URL_TEMPLATE;
-        public String SQL_CRITERIA;
+        private String SQL_CRITERIA;
 
         public Report(int iD, string nAME_REPORT, string dESCRIPTION, string uRL_TEMPLATE, string sQL_CRITERIA)
         {

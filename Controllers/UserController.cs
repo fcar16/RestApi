@@ -133,7 +133,7 @@ public IActionResult Register(LoginModel model)
         builder.Append(bytes[i].ToString("x2"));
     }
     model.Password = builder.ToString();
-    Console.WriteLine("Password: " + model.Password);
+    
 }
 
     

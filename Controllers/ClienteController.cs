@@ -66,8 +66,12 @@ namespace CajeroAPI.Controllers
             dynamic report = reportDAO.GetReportsddbb(query);
 
             String sqlToRun = report[0].SQL_CRITERIA1;
-            Console.WriteLine("SQL TO RUN: " + sqlToRun);
-            dynamic result = reportDAO.GetReportResult(sqlToRun);
+            dynamic data = reportDAO.GetReportResult(sqlToRun);
+            dynamic result = new System.Dynamic.ExpandoObject();
+            result.data = data;
+            result.name = report[0].NAME_REPORT1;
+            result.description = report[0].DESCRIPTION1;
+            result.url_template = report[0].URL_TEMPLATE1;
             return result;
         }
 

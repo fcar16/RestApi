@@ -10,7 +10,7 @@ namespace CajeroAPI.Controllers
 {
     public class ReportDAO
     {
-        
+
 
         public ArrayList GetReportsddbb(string query)
         {
@@ -47,11 +47,11 @@ namespace CajeroAPI.Controllers
             finally
             {
                 _dbConnection.Close();
-                
+
             }
             return ArrayReports;
         }
-        
+
         public int GetProfileId(string query)
         {
             OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
@@ -79,11 +79,11 @@ namespace CajeroAPI.Controllers
             finally
             {
                 _dbConnection.Close();
-                
+
             }
             return profile_id;
         }
-        
+
         public ArrayList GetReportCritddbb(String query)
         {
             OracleConnection _dbConnection = new OracleConnection("Data Source = localhost;User Id = system; Password = admin;");
@@ -103,7 +103,7 @@ namespace CajeroAPI.Controllers
                     string type = reader["TYPE"].ToString();
                     string @operator = reader["OPERATOR"].ToString();
                     string description = reader["DESCRIPTION"].ToString();
-                    string sql = reader["SQL"].ToString(); 
+                    string sql = reader["SQL"].ToString();
                     string sQL_SOURCE = reader["SQL_SOURCE"].ToString();
                     int Idc = Convert.ToInt32(reader["ID_REPORT"]);
                     int order = Convert.ToInt32(reader["ORDER_NUMBER"]);
@@ -142,12 +142,21 @@ namespace CajeroAPI.Controllers
 
                 OracleDataReader reader = command.ExecuteReader();
 
+                bool isFirst = true; // Variable para verificar si es el primer elemento
                 while (reader.Read())
                 {
                     string JSON_VALUE = reader["JSON_VALUE"].ToString();
-                    // Populate the report object with data from the reader
-                    //ArrayReports.Add(JObject.Parse(JSON_VALUE));
-                    ArrayReports+= JSON_VALUE + ",";
+                    if (isFirst)
+                    {
+                        // Si es el primer elemento, no agregues una coma antes
+                        ArrayReports += JSON_VALUE;
+                        isFirst = false; // Cambiar el estado a falso después de agregar el primer elemento
+                    }
+                    else
+                    {
+                        // Para los siguientes elementos, agrega una coma antes
+                        ArrayReports += "," + JSON_VALUE;
+                    }
                 }
 
                 reader.Close();
