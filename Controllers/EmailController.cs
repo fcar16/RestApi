@@ -10,6 +10,7 @@ public class EmailController : ControllerBase
     [Microsoft.AspNetCore.Mvc.Route("SendEmail")]
     public OkResult SendEmail ()
     {
+        string localpath ="C:\\Users\\franc\\OneDrive\\Escritorio\\Angula\\RestApi\\Models\\TemporalMail\\Report.pdf";
         // Configurar los detalles del servidor SMTP
         string smtpServer = "smtp.gmail.com";
         int puertoSmtp = 587; // Puerto SMTP para envío seguro (TLS)
@@ -26,7 +27,7 @@ public class EmailController : ControllerBase
 
         // Crear el cliente SMTP
         SmtpClient clienteSmtp = new SmtpClient(smtpServer, puertoSmtp);
-
+        mensaje.Attachments.Add(new Attachment(localpath));
         // Autenticación (si es necesaria)
         clienteSmtp.UseDefaultCredentials = false;
         clienteSmtp.Credentials = new NetworkCredential(correoEmisor, contraseñaEmisor);
